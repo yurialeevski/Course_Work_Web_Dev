@@ -1,1 +1,5 @@
 databaseChangeLog:
+  - include:
+      file: liquibase/changesets/072023_create_bid_new.yml
+  - include:
+      file: liquibase/changesets/072023_create_lot_new.yml
