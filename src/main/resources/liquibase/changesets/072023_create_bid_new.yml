@@ -1,0 +1,32 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  1
+       author:  yuri_a
+       changes:
+         -  createTable:
+              tableName:  bid_new
+              columns:
+                -  column:
+                     name:  id
+                     type:  bigint
+                     autoIncrement:  true
+                     constraints:
+                       primaryKey:  true
+                       nullable:  false
+                -  column:
+                     name:  bidder_name
+                     type:  varchar(64)
+                     constraints:
+                       nullable:  false
+                -  column:
+                     name:  bid_date
+                     type:  timestamp without time zone
+                     constraints:
+                       nullable:  false
+                -  column:
+                     name:  lot_id
+                     type:  bigint
+                -  addForeignKeyConstraint:
+                     referencedColumnNames:  id
+                     referencedTableName:  lot
+                     validate:  true
